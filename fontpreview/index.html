@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<META name="viewport" content="width=device-width, initial-scale=1">  
+<head>
+
+    <meta charset="UTF-8">
+<title>拆腻子体在线预览 @吉丸卷</title>
+    <link rel="stylesheet" href="Color.css">
+    <link rel="stylesheet" href="Select.css">
+	<link rel="stylesheet" href="Input.css">
+	<link rel="stylesheet" href="Button.css">
+	<link rel="stylesheet" href="LightTip.css">
+
+
+<style type="text/css">
+body{background-color: #f7f9fa}
+.preview{width:350px; padding:10px; color: #4c5161; margin:0 auto;border: 1px solid #d0d0d5; border-radius: 4px; word-break: break-all;background-color: #FFF}
+.setup{ padding:10px 30px; border:dotted 0;color: #4c5161;font-size: 14px;margin:0 auto;width:360px;}
+.setup2{ padding:5px 0 10px 0; border:dotted 0;color: #f4615c;font-size: 12px;}
+.setup3{ padding:5px 0 10px 0; text-align: center; border:dotted 0;color: #a2a9b6;font-size: 12px;width:100%;position: fixed;bottom: 0; background-color: rgba(247, 249, 250,0.8)}
+@font-face {
+font-family: A;src: url("A2.woff") ;
+}
+@font-face {
+font-family: B;src: url("B2.woff") ;
+}
+@font-face {
+font-family: C2;src: url("C2.woff") ;
+}
+@font-face {
+font-family: T;src: url("T2.woff") ;
+}
+.disabled {
+      opacity: .4;
+      filter: alpha(opacity=40);
+      cursor: default;
+      -ms-pointer-events: none;
+      pointer-events: none;
+  }
+</style>
+</head>
+
+<body>
+<p>
+
+    <div class="setup">
+	<div width="50%" margin="0,auto"><img src="1.gif" width="100%"></div>
+    </br>
+	自定义文本
+&nbsp;
+    <input class="ui-input" type="text" width="300" height="30" id="fontInput" onchange="setFont();" value="I M CHINESE"/>
+     <a href="javascript:" class="ui-button ui-button-warning" role="button" id="enter" onclick="setFont()">提交修改</a>
+        <div class="setup2">
+        *在上方输入英文字符并点击提交可修改文字内容
+        </div>
+    <select id="fontFamily" onchange="setFont();">
+    <option value="C2">更改字体</option>
+    <option value="C2">企丸拆腻子体</option>
+    <option value="B">3×4像素体A</option>
+    <option value="A">3×4像素体B</option>
+    <option value="T">小票数字体</option>
+    </select>
+    &nbsp;&nbsp;大小&nbsp;
+    <select id="fontSize" onchange="setFont();">
+    <option value="10">10</option>
+    <option value="14">14</option>
+    <option value="16">16</option>
+    <option value="20">20</option>
+     <option value="24">24</option>
+    <option value="28">28</option>
+    <option value="30">30</option>
+    <option value="35">35</option>
+     <option value="45"selected>45</option>
+     <option value="50">50</option>
+     <option value="55">55</option>
+     <option value="60">60</option>
+    <option value="65">65</option>
+     <option value="75">75</option>
+     <option value="80">80</option>
+     <option value="95">95</option>
+          <option value="150">150</option>
+               <option value="200">200</option>
+                    <option value="250">250</option>
+    </select>
+   &nbsp;&nbsp; 颜色&nbsp;<input type="color" id="colorPicker" class="ui-color-input">
+</div>
+</p>
+<div class="preview" id="CC">
+	</br></br></br>
+</div>
+</br></br></br></br></br></br>
+<div class="setup3"><a href="https://qr.alipay.com/c1x07274hatju8yxrqab81e"><img src="0.gif" width="30px"></a></br>点击图片前往支付宝领红包</br>DONATE 微博@吉丸卷</div> 
+
+<script src="jquery.js"></script>
+<script src="Follow.js"></script>
+<script src="Drop.js"></script>
+<script src="Color.js"></script>
+<script src="Select.js"></script>
+<script src="LightTip.js"></script>
+<script>
+function setFont(){
+var preview = document.getElementById("CC");
+var fontInput = document.getElementById("fontInput").value;
+preview.innerHTML = fontInput;
+var fontFamily = document.getElementById("fontFamily").value;
+var fontSize = document.getElementById("fontSize").value;
+preview.style.cssText = ('font-size:' + fontSize + 'px;font-family:' + fontFamily );
+$.lightTip.success('内容已更新');
+}
+setFont();
+</script>
+<script>
+	$('select').selectMatch();
+</script>
+<script>
+$("#colorPicker").color().change(function() {
+    $('#CC').css('color', this.value);
+})
+</script>
+</body>
+</html>
+<!--总算能用了。UI部分使用了luluUI-->
