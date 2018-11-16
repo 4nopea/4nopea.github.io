@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<META name="viewport" content="width=device-width, initial-scale=1">  
+<head>
+
+    <meta charset="UTF-8">
+<title>Home Page</title>
+    <link rel="stylesheet" href="fontpreview/Color.css">
+    <link rel="stylesheet" href="fontpreview/Select.css">
+	<link rel="stylesheet" href="fontpreview/Input.css">
+	<link rel="stylesheet" href="fontpreview/Button.css">
+	<link rel="stylesheet" href="fontpreview/LightTip.css">
+
+
+
+<style type="text/css">
+body{background-color:#4c5161}
+.preview{width:350px; text-align: center; padding:10px; color:#4c5161; margin:0 auto;border: 1px solid #d0d0d5; border-radius: 4px; word-break: break-all;background-color: #FFF;font-size: 60px;font-family: C2}
+
+.setup{ padding:10px 30px; border:dotted 0;color: #f7f9fa;font-size: 24px;margin:0 auto;width:360px;font-family: B}
+.setup2{ padding:5px 0 10px 0; border:dotted 0;color:#f7f9fa;font-size: 12px; text-align: center;}
+.setup3{ padding:5px 0 10px 0; text-align: center; border:dotted 0;color: #f7f9fa;font-size: 12px;width:100%;position: fixed;bottom: 0; background-color: rgba(244, 97, 92,0.8)}
+@font-face {
+font-family: B;src: url("fontpreview/A2.woff") ;
+}
+@font-face {
+font-family: C2;src: url("fontpreview/C2.woff") ;
+}
+</style>
+</head>
+
+<body>
+<p>
+    <div class="setup">
+   &nbsp;&nbsp; color choose&nbsp;<input type="color" id="colorPicker" class="ui-color-input">
+   preview:
+</div>
+    <div class="preview" id="CC">
+	</br></br></br>
+</div>
+    <div class="setup2">
+© QiWan_Chinese Font</br></br></br>
+   更多文本FX工具</br></br>
+   <a href="fqkx/index.html" class="ui-button ui-button-primary" role="button">粉蛆克星免审查工具</a></br></br>
+   <a href="fontpreview/index.html" class="ui-button ui-button-warning" role="button">企丸拆腻子字体</a>
+</div>
+</p>
+
+</br></br></br></br></br></br>
+<div class="setup3"><a href="https://qr.alipay.com/c1x07274hatju8yxrqab81e"><img src="fontpreview/0.gif" width="60px"></a></br>点击图片前往支付宝领红包</br>DONATE 微博@吉丸卷</div> 
+
+<script src="fontpreview/jquery.js"></script>
+<script src="fontpreview/Follow.js"></script>
+<script src="fontpreview/Drop.js"></script>
+<script src="fontpreview/Color.js"></script>
+<script src="fontpreview/Select.js"></script>
+<script src="fontpreview/LightTip.js"></script>
+<script>
+function setFont(){
+var preview = document.getElementById("CC");
+var fontInput = "Hello World"
+preview.innerHTML = fontInput;
+$.lightTip.success('内容已更新');
+}
+setFont();
+</script>
+<script>
+	$('select').selectMatch();
+</script>
+<script>
+$("#colorPicker").color().change(function() {
+    $('#CC').css('color', this.value);
+})
+</script>
+</body>
+</html>
